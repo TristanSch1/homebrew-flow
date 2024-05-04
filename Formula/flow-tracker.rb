@@ -5,20 +5,20 @@
 class FlowTracker < Formula
   desc "Efortless time tracking in your terminal"
   homepage "https://github.com/TristanSch1/flow"
-  version "0.1.0"
+  version "1.0.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/TristanSch1/flow/releases/download/v0.1.0/flow_Darwin_x86_64.tar.gz"
-      sha256 "d16042546685b9fcb0357e938f9a902776360b07b3d7fff6b4ee87d7b64c742a"
+      url "https://github.com/TristanSch1/flow/releases/download/v1.0.0/flow_Darwin_x86_64.tar.gz"
+      sha256 "d8bea28df9c95671dd12635e9ab0031eccc0782dd61c6780e74dd6240fed2d7f"
 
       def install
         bin.install "flow"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/TristanSch1/flow/releases/download/v0.1.0/flow_Darwin_arm64.tar.gz"
-      sha256 "dd34a59d3424384fa8c84f10d1115786c6a66fdacb2a0d950e9ec22bb6183777"
+      url "https://github.com/TristanSch1/flow/releases/download/v1.0.0/flow_Darwin_arm64.tar.gz"
+      sha256 "90584a8538961a2153132626da592d97254c9e7b7745bcb110253b1e62b3e50d"
 
       def install
         bin.install "flow"
@@ -28,16 +28,16 @@ class FlowTracker < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/TristanSch1/flow/releases/download/v0.1.0/flow_Linux_x86_64.tar.gz"
-      sha256 "1ca102dbf07ccaa35df91850308c0d053c680f0f87addcf0423ae92c9ee1dbac"
+      url "https://github.com/TristanSch1/flow/releases/download/v1.0.0/flow_Linux_x86_64.tar.gz"
+      sha256 "c1f755b2d2c8002cd4f0dcbfa3f6a55b248841c05ac4dfad82bb396d4ef268f2"
 
       def install
         bin.install "flow"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TristanSch1/flow/releases/download/v0.1.0/flow_Linux_arm64.tar.gz"
-      sha256 "eeba295fc92dfdb58b1c533017cae9991b94ead58ca8013158b1cc313a33d2de"
+      url "https://github.com/TristanSch1/flow/releases/download/v1.0.0/flow_Linux_arm64.tar.gz"
+      sha256 "4681b82fb9ae475216a02fabf42d8b5adfcaf8e248571ecadf5532fefc08728b"
 
       def install
         bin.install "flow"
