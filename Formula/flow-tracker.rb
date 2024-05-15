@@ -5,20 +5,20 @@
 class FlowTracker < Formula
   desc "Efortless time tracking in your terminal"
   homepage "https://github.com/TristanSch1/flow"
-  version "1.0.1"
+  version "1.1.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/TristanSch1/flow/releases/download/v1.0.1/flow_Darwin_x86_64.tar.gz"
-      sha256 "b6c69b3d5a214eb902ad1c537e053244d2fc7e1e82978b96384eac3b288a6add"
+    on_intel do
+      url "https://github.com/TristanShz/flow/releases/download/v1.1.0/flow_Darwin_x86_64.tar.gz"
+      sha256 "3ccd26b76712b9433b82696f032d6f5faff4690ad56d90709e86e3ff86fc0d6a"
 
       def install
         bin.install "flow"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/TristanSch1/flow/releases/download/v1.0.1/flow_Darwin_arm64.tar.gz"
-      sha256 "8caab28a66514d920f5de6463bc8776d42464ba7b49847cd9294ff864f01d062"
+    on_arm do
+      url "https://github.com/TristanShz/flow/releases/download/v1.1.0/flow_Darwin_arm64.tar.gz"
+      sha256 "9b580b4fe170896957c4e248763dca633e537d108d198a7daa43a0b632e42f18"
 
       def install
         bin.install "flow"
@@ -27,20 +27,24 @@ class FlowTracker < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/TristanSch1/flow/releases/download/v1.0.1/flow_Linux_x86_64.tar.gz"
-      sha256 "9a09a60f41676080499e2f64c38f37be6befa06a6fb8eb0a5d79c8f9bd2dab8e"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/TristanShz/flow/releases/download/v1.1.0/flow_Linux_x86_64.tar.gz"
+        sha256 "1b000651d64ede8b8694f702f4c8743d8fcd89edae3ec54146c2b35e3d8f1d03"
 
-      def install
-        bin.install "flow"
+        def install
+          bin.install "flow"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/TristanSch1/flow/releases/download/v1.0.1/flow_Linux_arm64.tar.gz"
-      sha256 "0a331425f75d901c086028d01f2ab32c0a3fc9c32209a211b3c08ca2324581c3"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/TristanShz/flow/releases/download/v1.1.0/flow_Linux_arm64.tar.gz"
+        sha256 "d8fcc5c387efc438e3e8509ff867b65ccd1369ca608b5bee8d316994a3c2490f"
 
-      def install
-        bin.install "flow"
+        def install
+          bin.install "flow"
+        end
       end
     end
   end
